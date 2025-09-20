@@ -1,0 +1,36 @@
+QSDPharmalitics/
+├── app/
+│   ├── __init__.py
+│   ├── main.py                 # Aplicação principal
+│   ├── config.py              # Configurações
+│   ├── database.py            # Conexão com banco
+│   ├── models/                # Modelos de dados
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── sales.py
+│   │   └── analytics.py
+│   ├── schemas/               # Pydantic schemas
+│   │   ├── __init__.py
+│   │   ├── sales.py
+│   │   └── analytics.py
+│   ├── api/                   # Rotas da API
+│   │   ├── __init__.py
+│   │   ├── deps.py            # Dependências
+│   │   └── v1/
+│   │       ├── __init__.py
+│   │       ├── sales.py
+│   │       ├── analytics.py
+│   │       └── reports.py
+│   ├── core/                  # Lógica de negócio
+│   │   ├── __init__.py
+│   │   ├── analytics.py
+│   │   └── reports.py
+│   └── utils/                 # Utilitários
+│       ├── __init__.py
+│       └── data_processing.py
+├── requirements.txt           # Dependências
+├── .env                      # Variáveis de ambiente
+├── docker-compose.yml        # Para desenvolvimento
+├── alembic.ini              # Migrations
+├── alembic/                 # Pasta de migrations
+└── README.md                # Documentação

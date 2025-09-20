@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Aplicação FastAPI
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./reports:/app/reports
+    environment:
+      - DATABASE_URL=postgresql://pharmalitics_user:pharmalitics_pass@db:5432/pharmalitics
+    depends_on:
+      - db
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - pharmalitics-network
+
+  # Banco PostgreSQL (opcional - para produção)
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=pharmalitics
+      - POSTGRES_USER=pharmalitics_user
+      - POSTGRES_PASSWORD=pharmalitics_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - pharmalitics-network
+
+  # PgAdmin (opcional - interface web para PostgreSQL)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@pharmalitics.local
+      - PGADMIN_DEFAULT_PASSWORD=admin123
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - pharmalitics-network
+
+volumes:
+  postgres_data:
+
+networks:
+  pharmalitics-network:
+    driver: bridge
