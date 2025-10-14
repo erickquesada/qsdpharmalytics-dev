@@ -6,19 +6,19 @@ from datetime import datetime, date, timedelta
 from decimal import Decimal
 import pandas as pd
 
-from database.base import get_db
-from api.dependencies import get_current_active_user, get_analyst_or_admin_user
-from schemas.analytics import (
+from backend.database.base import get_db
+from backend.api.dependencies import get_current_active_user, get_analyst_or_admin_user
+from backend.schemas.analytics import (
     SalesPerformanceResponse, 
     MarketShareResponse, 
     TrendAnalysisResponse, 
     DashboardSummaryResponse,
     AnalyticsFilters
 )
-from models.sales import Sale
-from models.products import Product, ProductCategory
-from models.pharmacies import Pharmacy
-from models.user import User
+from backend.models.sales import Sale
+from backend.models.products import Product, ProductCategory
+from backend.models.pharmacies import Pharmacy
+from backend.models.user import User
 
 router = APIRouter()
 

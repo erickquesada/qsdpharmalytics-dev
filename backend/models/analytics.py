@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text, Boolean, DateTime, Date, JSON, Enum, Numeric
 from sqlalchemy.sql import func
 import enum
-from database.base import Base
+from backend.database.base import Base
 
 
 class MetricType(str, enum.Enum):

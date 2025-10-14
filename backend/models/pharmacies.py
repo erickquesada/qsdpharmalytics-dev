@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Text, Boolean, DateTime, Enum, N
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 import enum
-from database.base import Base
+from backend.database.base import Base
 
 
 class PharmacyType(str, enum.Enum):

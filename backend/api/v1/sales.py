@@ -5,16 +5,16 @@ from typing import List, Optional
 from datetime import datetime, date
 from decimal import Decimal
 
-from database.base import get_db
-from api.dependencies import get_current_active_user, get_admin_user
-from schemas.sales import (
+from backend.database.base import get_db
+from backend.api.dependencies import get_current_active_user, get_admin_user
+from backend.schemas.sales import (
     SaleCreate, SaleUpdate, SaleResponse, SaleListResponse, 
     SalesSummary, SalesFilters
 )
-from models.sales import Sale, SaleStatus, PaymentMethod
-from models.user import User
-from models.products import Product
-from models.pharmacies import Pharmacy
+from backend.models.sales import Sale, SaleStatus, PaymentMethod
+from backend.models.user import User
+from backend.models.products import Product
+from backend.models.pharmacies import Pharmacy
 
 router = APIRouter()
 

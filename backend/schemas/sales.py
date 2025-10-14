@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field, validator
 from typing import Optional, List
 from datetime import datetime
 from decimal import Decimal
-from models.sales import PaymentMethod, SaleStatus
+from backend.models.sales import PaymentMethod, SaleStatus
 
 
 class SaleBase(BaseModel):

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from core.config import settings
+from backend.core.config import settings
 
 # Create SQLAlchemy engine
 engine = create_engine(

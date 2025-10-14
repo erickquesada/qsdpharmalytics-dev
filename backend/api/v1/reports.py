@@ -6,15 +6,15 @@ import os
 import pandas as pd
 from io import StringIO, BytesIO
 
-from database.base import get_db
-from api.dependencies import get_current_active_user, get_analyst_or_admin_user
-from schemas.reports import ReportRequest, ReportResponse, ReportListResponse, ReportType, ReportFormat
-from models.analytics import ReportGeneration
-from models.sales import Sale
-from models.products import Product
-from models.pharmacies import Pharmacy
-from models.user import User
-from core.config import settings
+from backend.database.base import get_db
+from backend.api.dependencies import get_current_active_user, get_analyst_or_admin_user
+from backend.schemas.reports import ReportRequest, ReportResponse, ReportListResponse, ReportType, ReportFormat
+from backend.models.analytics import ReportGeneration
+from backend.models.sales import Sale
+from backend.models.products import Product
+from backend.models.pharmacies import Pharmacy
+from backend.models.user import User
+from backend.core.config import settings
 
 router = APIRouter()
 

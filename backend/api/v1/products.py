@@ -3,11 +3,11 @@ from sqlalchemy.orm import Session, joinedload
 from sqlalchemy import desc, or_
 from typing import List, Optional
 
-from database.base import get_db
-from api.dependencies import get_current_active_user, get_admin_user, get_analyst_or_admin_user
-from schemas.products import ProductCreate, ProductUpdate, ProductResponse, ProductCategoryCreate, ProductCategoryResponse
-from models.products import Product, ProductCategory
-from models.user import User
+from backend.database.base import get_db
+from backend.api.dependencies import get_current_active_user, get_admin_user, get_analyst_or_admin_user
+from backend.schemas.products import ProductCreate, ProductUpdate, ProductResponse, ProductCategoryCreate, ProductCategoryResponse
+from backend.models.products import Product, ProductCategory
+from backend.models.user import User
 
 router = APIRouter()
 

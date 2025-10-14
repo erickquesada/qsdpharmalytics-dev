@@ -2,7 +2,7 @@ from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 from datetime import datetime
 from decimal import Decimal
-from models.pharmacies import PharmacyType, CustomerType
+from backend.models.pharmacies import PharmacyType, CustomerType
 
 
 class PharmacyBase(BaseModel):

@@ -3,7 +3,7 @@ from typing import Any, Union, Optional
 from jose import jwt
 from passlib.context import CryptContext
 from fastapi import HTTPException, status
-from core.config import settings
+from backend.core.config import settings
 
 
 # Password hashing - using pbkdf2 to avoid bcrypt compatibility issues
