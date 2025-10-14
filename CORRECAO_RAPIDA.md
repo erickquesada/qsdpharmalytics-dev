@@ -1,11 +1,17 @@
 # 🚀 Correção Rápida - Erro BACKEND_CORS_ORIGINS
 
-## 📋 Problema Identificado
+## 📋 Problemas Identificados
 
+### 1. Backend: BACKEND_CORS_ORIGINS
 O erro `SettingsError: error parsing value for field "BACKEND_CORS_ORIGINS"` ocorre quando:
 1. A variável `BACKEND_CORS_ORIGINS` está vazia no arquivo `.env`
 2. A variável está mal formatada (não é um JSON válido)
 3. A variável tem espaços em branco ou caracteres inválidos
+
+### 2. Frontend: Node Version
+O erro `The engine "node" is incompatible with this module` ocorre porque:
+1. O Dockerfile usava Node 18, mas react-router-dom 7.9.4 requer Node 20+
+2. CORRIGIDO: Atualizado para Node 20-alpine
 
 ## ✅ Solução
 
