@@ -5,7 +5,7 @@ from backend.core.config import settings
 
 # Create SQLAlchemy engine
 engine = create_engine(
-    settings.DATABASE_URL,
+    settings.get_database_url(),
     echo=settings.DEBUG,
     pool_pre_ping=True,
     pool_recycle=300,
