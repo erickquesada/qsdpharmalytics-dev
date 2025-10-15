@@ -29,12 +29,11 @@ echo "👤 Creating initial admin user..."
 python3 -c "
 import sys
 sys.path.insert(0, '/app')
-sys.path.insert(0, '/app/backend')
 
 try:
-    from core.database import SessionLocal
-    from models.user import User
-    from core.security import get_password_hash
+    from backend.core.database import SessionLocal
+    from backend.models.user import User
+    from backend.core.security import get_password_hash
 
     db = SessionLocal()
     try:
